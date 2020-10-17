@@ -1,8 +1,14 @@
+const fs = require('fs');
 const express = require('express');
 const app = express();
 
-app.get('/', (req, res) => {
-  res.status(200).send('hello from the server side');
+const tours = fs.readFileSync(`${__dirname}/dev-data/data/tours-simple.json}`);
+
+app.get('/api/v1/tours', (req, res) => {
+  res.status(200).send({
+    status: 'success',
+    data: { tours }
+  });
 });
 
 const port = 5000;
