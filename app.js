@@ -10,7 +10,4 @@ app.use(express.json());
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
-const port = 5000;
-app.listen(port, () => {
-	console.log(`App listening on port ${port}...`);
-});
+module.exports = app;
