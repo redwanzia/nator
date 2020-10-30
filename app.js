@@ -7,6 +7,7 @@ const app = express();
 // body parser middleware:
 app.use(express.json());
 
+// routes
 app.use('/api/v1/tours', tourRouter);
 app.use('/api/v1/users', userRouter);
 
