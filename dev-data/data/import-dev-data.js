@@ -50,7 +50,7 @@ if (process.argv[2] === '--import') {
 	deleteData();
 }
 
-// PROCESS>ARGV
+// PROCESS.ARGV
 // run 'node dev-data/data/import-dev-data.js' in the terminal that will return an arry of two strings
 // quit the process add '--import' flag to 'node dev-data/data/import-dev-data.js' eg.''node dev-data/data/import-dev-data.js --import'. The import flag will be updated as the third element in the arry
 
