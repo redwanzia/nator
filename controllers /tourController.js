@@ -118,28 +118,10 @@ exports.getTourStats = async (req, res) => {
 			},
 			{
 				$sort: { avgPrice: 1 }
-			},
-			{
-				$group: {
-					_id: { $month: '$startDates' },
-					numTourStarts: { $sum: 1 },
-					tours: { $push: '$name' }
-				}
-			},
-			{
-				$addField: { $month: '$_id' }
-			},
-			{
-				$project: {
-					_id: 0
-				}
-			},
-			{
-				$sort: { numTourStarts: -1 }
-			},
-			{
-				$limit: 12
 			}
+			// {
+			// 	$match: { _id: { $ne: 'EASY' } }
+			// }
 		]);
 
 		res.status(200).json({
@@ -182,3 +164,28 @@ exports.getMonthlyPlan = async (req, res) => {
 		});
 	}
 };
+
+// {
+// 	$sort: { avgPrice: 1 }
+// },
+// {
+// 	$group: {
+// 		_id: { $month: '$startDates' },
+// 		numTourStarts: { $sum: 1 },
+// 		tours: { $push: '$name' }
+// 	}
+// },
+// {
+// 	$addField: { $month: '$_id' }
+// },
+// {
+// 	$project: {
+// 		_id: 0
+// 	}
+// },
+// {
+// 	$sort: { numTourStarts: -1 }
+// },
+// {
+// 	$limit: 12
+// }
